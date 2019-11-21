@@ -53,7 +53,7 @@
     </div>
 
 
-
+    <script src="./js/tinymce/user.js"></script>
     <script>
         var $level01 = $('.level01');
         var $subli = $('.level02 li')
@@ -107,16 +107,7 @@
     </script>
     <script>
         $('#tiuchu').click(function() {
-            $.post('http://localhost:8000/admin/logout',
-                function(res) {
-                    console.log(res);
-
-                    if (res.code === 200) {
-                        location.href = './login.html';
-                    }
-
-                }
-            )
+            user.logout();
         })
     </script>
 </body>

@@ -54,6 +54,7 @@
 
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/tinymce/user.js"></script>
 
 
     <script>
@@ -65,28 +66,10 @@
             if (input_txt === '' || password === '') {
                 alert('不能为空');
                 // $('myModal').modal('show');
-
                 return;
             }
-            $.post(
-                'http://localhost:8000/admin/login', {
-                    user_name: input_txt,
-                    password: password
-                },
-                function(res) {
-                    console.log(res);
-                    if (res.code === 200) {
-                        // alert('登录成功')
-                        location.href = "./index.html";
-                    } else {
-                        alert('登录失败')
-                            // $('myModal').modal('show');
+            user.login(input_txt, password);
 
-
-                    }
-
-                }
-            )
         })
     </script>
 </body>
