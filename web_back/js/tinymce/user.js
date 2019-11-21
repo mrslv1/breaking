@@ -38,5 +38,15 @@ var user = {
 
             }
         )
+    },
+    // 获取用户信息
+    getlnfo: function() {
+        $.get(baseUrl + 'admin/getuser', function(res) {
+            console.log(res);
+            if (res.code === 200) {
+                $('#userlmg').prop('src', res.data.user_pic)
+                $('#userName').text(res.data.nickname)
+            }
+        })
     }
 }

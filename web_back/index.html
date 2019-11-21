@@ -17,8 +17,8 @@
     <div class="sider">
         <a href="#" class="logo"><img src="images/logo02.png" alt="logo"></a>
         <div class="user_info">
-            <img src="images/2.jpg" alt="person">
-            <span>欢迎&nbsp;&nbsp;李思思</span>
+            <img id="userlmg" src="images/2.jpg" alt="person">
+            <span>欢迎&nbsp;&nbsp;<span id="userName">李思思</span></span>
             <b>管理员</b>
         </div>
         <div class="menu">
@@ -106,6 +106,11 @@
         }
     </script>
     <script>
+        // 获取用户信息并显示
+        user.getlnfo();
+
+
+        // 用户推出
         $('#tiuchu').click(function() {
             user.logout();
         })
